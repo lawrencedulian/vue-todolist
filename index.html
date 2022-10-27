@@ -20,13 +20,26 @@
             </div>
             <!-- /USER INPUT -->
 
-            <!-- BUTTONS -->
+            <!-- BUTTON -->
             <button @click="addNewTask">Enter</button>
             <div class="error" v-if="hasError">
                 <!-- ERROR MESSAGE -->
                 <small>The task must contain at least 5 characters. </small>
             </div>
-            <!-- /BUTTONS -->
+            <!-- /BUTTON -->
+
+            <!-- CONTAINER -->
+            <div class="container">
+                <!-- LIST TASKS -->
+                <ul>
+                    <li v-for="(task, index) in tasks">
+                        {{task}}
+                        <span class="deleteTask" @click="removeTask(index)">&cross;</span>
+                    </li>
+                </ul>
+                <!-- /LIST TASKS -->
+            </div>
+            <!-- /CONTAINER -->
         </div>
         </body>
 
