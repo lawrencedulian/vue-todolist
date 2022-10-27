@@ -13,11 +13,21 @@
            
         </header>
         <body>
+            <!-- USER INPUT -->
             <div class="newTask">
                 <label for="task-input">New Task</label>
                 <input type="text" id="task-input" placeholder="Enter new task" v-model.trim="newTask" @keyup.enter="addNewTask">
             </div>
+            <!-- /USER INPUT -->
 
+            <!-- BUTTONS -->
+            <button @click="addNewTask">Enter</button>
+            <div class="error" v-if="hasError">
+                <!-- ERROR MESSAGE -->
+                <small>The task must contain at least 5 characters. </small>
+            </div>
+            <!-- /BUTTONS -->
+        </div>
         </body>
 
 
